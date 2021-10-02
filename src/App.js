@@ -36,10 +36,10 @@ function countFarts(smellLevel) {
 
 class App extends Component {
   state = {
-    text: placeholder
+    text: placeholder,
   };
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -47,8 +47,10 @@ class App extends Component {
     return (
       <div>
         <h1 className="text-center">Markdown Previewer</h1>
-        <Editor onChange={this.onChange} markdown={this.state.text} />
-        <Previewer text={this.state.text} />
+        <div className="view">
+          <Editor onChange={this.onChange} markdown={this.state.text} />
+          <Previewer text={this.state.text} />
+        </div>
       </div>
     );
   }
